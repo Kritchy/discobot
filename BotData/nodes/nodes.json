@@ -1,0 +1,481 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "7942fe4c-dffa-4146-8cab-d254b3d80d5d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": []
+        }
+      ],
+      "x": 148,
+      "y": 188
+    },
+    {
+      "type": "command",
+      "name": "info",
+      "guid": "2224944a-561a-4fa1-824b-2f31ea37c836",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": []
+        }
+      ],
+      "x": 149,
+      "y": 325
+    },
+    {
+      "type": "response",
+      "name": "help menu",
+      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "!help",
+          "value": "Shows this menu",
+          "inline": "true"
+        },
+        {
+          "name": "!info",
+          "value": "Shows some info",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+        }
+      ],
+      "x": 345,
+      "y": 182,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "1FFF57",
+        "Help Menu",
+        "",
+        "Bot Name Here",
+        "",
+        "",
+        "This is the embed description, replace this with some info about your bot!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "show info",
+      "guid": "5053a44d-4a5e-460a-974d-da0cc07aac7c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2224944a-561a-4fa1-824b-2f31ea37c836"
+        }
+      ],
+      "x": 360,
+      "y": 324,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.DefaultChannel.id}",
+        "Command Author: ${dbsVars.CommandAuthor.displayName}\nTagged author: <@${dbsVars.CommandAuthor.id}>\nYou can insert more values by clicking the \"Insert Variable\" button next to this field!",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Rea",
+      "guid": "98b938ae-53c5-48ef-89f8-d8e9b3c9bf68",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "rea",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "9c058226-d562-4107-a7de-c6a905dee0d2"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5e646379-4fe1-44d0-a6f4-05dacf5da4cb"
+        }
+      ],
+      "x": 342,
+      "y": 535,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "============================\nרוצה לקבל התראה ללייב ישר שהוא מתחיל? \nיש את רול הרול youtube update!\nלחץ :white_check_mark: כדי לקבל את הרול\n=============================",
+        "rea",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "Reac",
+      "guid": "5e646379-4fe1-44d0-a6f4-05dacf5da4cb",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "98b938ae-53c5-48ef-89f8-d8e9b3c9bf68"
+          ]
+        }
+      ],
+      "x": 137,
+      "y": 553,
+      "perms": [
+        "owners",
+        "co owners"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "reatest",
+      "guid": "9c058226-d562-4107-a7de-c6a905dee0d2",
+      "reactionFields": [
+        "✅"
+      ],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "✅",
+          "connections": [
+            "c873a292-b6e6-4ed0-9653-f720ef3d2e3f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "98b938ae-53c5-48ef-89f8-d8e9b3c9bf68"
+        }
+      ],
+      "x": 517,
+      "y": 580,
+      "rtype": "Reaction",
+      "rsubtype": "Add Reaction Listener",
+      "formdata": [
+        "${tempVars.rea.id}",
+        "600",
+        " emoji",
+        "user",
+        "BOOL_TRUE@@"
+      ],
+      "formnames": [
+        "message",
+        "duration",
+        "reactionemoji",
+        "reactionuser",
+        "react"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "hi",
+      "guid": "4434a04f-6866-4085-8b95-c9abbe71748d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": ""
+        }
+      ],
+      "x": 758,
+      "y": 618,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "hi",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "addrole",
+      "guid": "c873a292-b6e6-4ed0-9653-f720ef3d2e3f",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9c058226-d562-4107-a7de-c6a905dee0d2"
+        }
+      ],
+      "x": 768,
+      "y": 488,
+      "rtype": "User Action",
+      "rsubtype": "Add Role to User",
+      "formdata": [
+        "${tempVars.user.id}",
+        "youtube update"
+      ],
+      "formnames": [
+        "user",
+        "roleName"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "hi2",
+      "guid": "ed982b34-3367-4bdd-aabf-123bac56e36b",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": ""
+        }
+      ],
+      "x": 537,
+      "y": 289,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "<@${tempVars.user.id}>${tempVars.user.user.tag}",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "test2",
+      "guid": "b32048fb-258b-4871-96c5-f4314da186df",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "42596694-8607-4bde-9677-8d4e3205b964"
+          ]
+        }
+      ],
+      "x": 167,
+      "y": 692
+    },
+    {
+      "type": "response",
+      "name": "removerole",
+      "guid": "42596694-8607-4bde-9677-8d4e3205b964",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b32048fb-258b-4871-96c5-f4314da186df"
+        }
+      ],
+      "x": 497,
+      "y": 836,
+      "rtype": "User Action",
+      "rsubtype": "Remove Role From User"
+    },
+    {
+      "type": "response",
+      "name": "test3",
+      "guid": "ded709a9-bbad-482b-99a2-54dd2387bac4",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": []
+        }
+      ],
+      "x": 677,
+      "y": 839,
+      "rtype": "User Action",
+      "rsubtype": "Remove Role From User"
+    },
+    {
+      "type": "command",
+      "name": "test4",
+      "guid": "41a5e78a-b3bd-47f6-82f5-84b4e494db03",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "08643616-da46-4a8c-bc90-ca09aa0eafc8"
+          ]
+        }
+      ],
+      "x": 61,
+      "y": 938
+    },
+    {
+      "type": "response",
+      "name": "asdas",
+      "guid": "08643616-da46-4a8c-bc90-ca09aa0eafc8",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "xp",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "5fc2e047-47c6-46c5-975e-983835d9eff5"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "41a5e78a-b3bd-47f6-82f5-84b4e494db03"
+        }
+      ],
+      "x": 260,
+      "y": 933,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "xp",
+        "Number",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "sddd",
+      "guid": "5fc2e047-47c6-46c5-975e-983835d9eff5",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "08643616-da46-4a8c-bc90-ca09aa0eafc8"
+        }
+      ],
+      "x": 532,
+      "y": 972,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${tempVars.xp}",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    }
+  ]
+}
