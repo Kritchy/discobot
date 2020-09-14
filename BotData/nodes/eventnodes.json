@@ -91,8 +91,6 @@
       "guid": "cd714fde-c709-4fbe-87df-bb64c69925ec",
       "reactionFields": [],
       "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -130,8 +128,6 @@
       "guid": "c9f2e727-dd34-487d-b6c9-2f91aa8bf6fa",
       "reactionFields": [],
       "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",

@@ -1,0 +1,61 @@
+{
+  "command": [
+    {
+      "name": "User Joins Server",
+      "perms": [],
+      "actions": [
+        {
+          "name": "adad",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "${dbsVars.DefaultChannel.id}",
+          "messagetext": ":open_hands: <@${tempVars.newuser.id}> ItaFor ברוך הבא לשרת של :open_hands:",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "welock",
+          "category": "Message",
+          "type": "Send Direct Message",
+          "user": "${tempVars.newuser.user.tag}",
+          "messagetext": ":open_hands: <@${tempVars.newuser.id}> ItaFor ברוך הבא לשרת של :open_hands:",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "newuser"
+      }
+    },
+    {
+      "name": "Any Message",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "msguser"
+      }
+    },
+    {
+      "name": "User Kicked",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "kickuser"
+      }
+    },
+    {
+      "name": "User Banned",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "banuser"
+      }
+    },
+    {
+      "name": "Bot Initialization",
+      "perms": [],
+      "actions": [],
+      "var": {}
+    }
+  ]
+}

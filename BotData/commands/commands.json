@@ -1,0 +1,69 @@
+{
+  "command": [
+    {
+      "name": "help",
+      "actions": []
+    },
+    {
+      "name": "info",
+      "actions": []
+    },
+    {
+      "name": "Reac",
+      "perms": [
+        "owners",
+        "co owners"
+      ],
+      "actions": [
+        {
+          "name": "Rea",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "messagetext": "============================\nרוצה לקבל התראה ללייב ישר שהוא מתחיל? \nיש את הרול youtube update!\nלחץ :white_check_mark: כדי לקבל את הרול\nלחץ :x: כדי לבטל את הרול\n=============================",
+          "savetovariable": "rea",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "reatest",
+          "category": "Reaction",
+          "type": "Add Reaction Listener",
+          "reactionActions": {
+            "✅": [
+              {
+                "name": "addrole",
+                "category": "User Action",
+                "type": "Add Role to User",
+                "user": "${tempVars.user.id}",
+                "rolename": "youtube update"
+              }
+            ],
+            "❌": [
+              {
+                "name": "removerole",
+                "category": "User Action",
+                "type": "Remove Role From User",
+                "user": "${tempVars.user.id}",
+                "rolename": "youtube update",
+                "reason": "ביטלת את הרול!"
+              }
+            ]
+          },
+          "message": "${tempVars.rea.id}",
+          "duration": "600",
+          "reactionemoji": " emoji",
+          "reactionuser": "user",
+          "react": "BOOL_TRUE@@"
+        }
+      ]
+    },
+    {
+      "name": "test2",
+      "actions": []
+    },
+    {
+      "name": "xp",
+      "actions": []
+    }
+  ]
+}

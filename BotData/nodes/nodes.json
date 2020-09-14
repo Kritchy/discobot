@@ -155,7 +155,7 @@
       "rsubtype": "Send Message",
       "formdata": [
         "${dbsVars.CommandChannel.id}",
-        "============================\nרוצה לקבל התראה ללייב ישר שהוא מתחיל? \nיש את רול הרול youtube update!\nלחץ :white_check_mark: כדי לקבל את הרול\n=============================",
+        "============================\nרוצה לקבל התראה ללייב ישר שהוא מתחיל? \nיש את הרול youtube update!\nלחץ :white_check_mark: כדי לקבל את הרול\nלחץ :x: כדי לבטל את הרול\n=============================",
         "rea",
         "temp"
       ],
@@ -190,7 +190,8 @@
       "name": "reatest",
       "guid": "9c058226-d562-4107-a7de-c6a905dee0d2",
       "reactionFields": [
-        "✅"
+        "✅",
+        "❌"
       ],
       "embedfields": [],
       "outputs": [
@@ -198,6 +199,12 @@
           "label": "✅",
           "connections": [
             "c873a292-b6e6-4ed0-9653-f720ef3d2e3f"
+          ]
+        },
+        {
+          "label": "❌",
+          "connections": [
+            "a3feb6ab-20b7-45be-9856-c0cb6c35a4ff"
           ]
         }
       ],
@@ -244,8 +251,8 @@
           "id": ""
         }
       ],
-      "x": 758,
-      "y": 618,
+      "x": 1046,
+      "y": 584,
       "rtype": "Message",
       "rsubtype": "Send Message",
       "formdata": [
@@ -279,8 +286,8 @@
           "id": "9c058226-d562-4107-a7de-c6a905dee0d2"
         }
       ],
-      "x": 768,
-      "y": 488,
+      "x": 734,
+      "y": 545,
       "rtype": "User Action",
       "rsubtype": "Add Role to User",
       "formdata": [
@@ -334,18 +341,17 @@
       "outputs": [
         {
           "label": "responses",
-          "connections": [
-            "42596694-8607-4bde-9677-8d4e3205b964"
-          ]
+          "connections": []
         }
       ],
-      "x": 167,
-      "y": 692
+      "x": 109,
+      "y": 982
     },
     {
       "type": "response",
       "name": "removerole",
-      "guid": "42596694-8607-4bde-9677-8d4e3205b964",
+      "guid": "a3feb6ab-20b7-45be-9856-c0cb6c35a4ff",
+      "reactionFields": [],
       "embedfields": [],
       "outputs": [
         {
@@ -356,18 +362,104 @@
       "inputs": [
         {
           "label": "trigger",
-          "id": "b32048fb-258b-4871-96c5-f4314da186df"
+          "id": "9c058226-d562-4107-a7de-c6a905dee0d2"
         }
       ],
-      "x": 497,
-      "y": 836,
+      "x": 736,
+      "y": 708,
       "rtype": "User Action",
-      "rsubtype": "Remove Role From User"
+      "rsubtype": "Remove Role From User",
+      "formdata": [
+        "${tempVars.user.id}",
+        "youtube update",
+        "ביטלת את הרול!"
+      ],
+      "formnames": [
+        "user",
+        "roleName",
+        "reason"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "xp",
+      "guid": "ead063d6-5e5d-416e-880e-6d7509569e48",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": []
+        }
+      ],
+      "x": 57,
+      "y": 846
     },
     {
       "type": "response",
-      "name": "test3",
-      "guid": "ded709a9-bbad-482b-99a2-54dd2387bac4",
+      "name": "zczx",
+      "guid": "62108d43-7660-405e-814a-922ad58af146",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": []
+        },
+        {
+          "label": "false",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ead063d6-5e5d-416e-880e-6d7509569e48"
+        }
+      ],
+      "x": 599,
+      "y": 873,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "xp",
+        "temp",
+        "equal to",
+        "10"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "messege",
+      "guid": "4a6abada-1391-4aaa-bfce-300db3331237",
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": []
+        }
+      ],
+      "x": 340,
+      "y": 857,
+      "rtype": "Message",
+      "rsubtype": "Send Message"
+    },
+    {
+      "type": "response",
+      "name": "get",
+      "guid": "9dd34c6e-1879-47ce-aba4-2038056e63d5",
       "embedfields": [],
       "outputs": [
         {
@@ -381,101 +473,10 @@
           "id": []
         }
       ],
-      "x": 677,
-      "y": 839,
-      "rtype": "User Action",
-      "rsubtype": "Remove Role From User"
-    },
-    {
-      "type": "command",
-      "name": "test4",
-      "guid": "41a5e78a-b3bd-47f6-82f5-84b4e494db03",
-      "outputs": [
-        {
-          "label": "responses",
-          "connections": [
-            "08643616-da46-4a8c-bc90-ca09aa0eafc8"
-          ]
-        }
-      ],
-      "x": 61,
-      "y": 938
-    },
-    {
-      "type": "response",
-      "name": "asdas",
-      "guid": "08643616-da46-4a8c-bc90-ca09aa0eafc8",
-      "reactionFields": [],
-      "embedfields": [],
-      "saveToVariable": "xp",
-      "saveToVariableType": "temp",
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": [
-            "5fc2e047-47c6-46c5-975e-983835d9eff5"
-          ]
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "41a5e78a-b3bd-47f6-82f5-84b4e494db03"
-        }
-      ],
-      "x": 260,
-      "y": 933,
-      "rtype": "Variable",
-      "rsubtype": "Store Value in Variable",
-      "formdata": [
-        "xp",
-        "Number",
-        "temp",
-        "0"
-      ],
-      "formnames": [
-        "varname",
-        "vartype",
-        "saveVarType",
-        "param"
-      ]
-    },
-    {
-      "type": "response",
-      "name": "sddd",
-      "guid": "5fc2e047-47c6-46c5-975e-983835d9eff5",
-      "reactionFields": [],
-      "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": []
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "08643616-da46-4a8c-bc90-ca09aa0eafc8"
-        }
-      ],
-      "x": 532,
-      "y": 972,
-      "rtype": "Message",
-      "rsubtype": "Send Message",
-      "formdata": [
-        "${dbsVars.CommandChannel.id}",
-        "${tempVars.xp}",
-        "",
-        "temp"
-      ],
-      "formnames": [
-        "channelName",
-        "messageText",
-        "saveToVariable",
-        "saveToVariableType"
-      ]
+      "x": 250,
+      "y": 350,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data"
     }
   ]
 }
